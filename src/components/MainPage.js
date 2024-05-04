@@ -2,24 +2,30 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import retirementIcon from '../images/retirement-icon.png'; // Import the retirement icon image
+import siren from '../images/siren.png';
+import wedding from '../images/wedding-ring.png'
+import vacations from '../images/vacations.png'
+import mortarboard from '../images/mortarboard.png'
+import wealth from '../images/wealth.png'
 
 // Array of Input Data
 const plans = [
-  { id: 1, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 2, heading: "Emergency", text: "Your old age, taken care of" },
-  { id: 3, heading: "Retirement", text: "Be prepared at all times" },
-  { id: 4, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 5, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 6, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 7, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 8, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 9, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 10, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 11, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 12, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 13, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 14, heading: "Retirement", text: "Your old age, taken care of" },
-  { id: 14, heading: "Retirement", text: "Your old age, taken care of" },
+  { id: 1, icon :retirementIcon , heading: "Retirement", text: "Your old age, taken care of" },
+  { id: 2, icon :siren, heading: "Emergency", text: "Be prepared at all times" },
+  { id: 3, icon: wedding, heading: "Wedding", text: "Plan your dream wedding today" },
+  { id: 4, icon: vacations, heading: "Vacation", text: "Never too late for the Bahamas!" },
+  { id: 5, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 6, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 7, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 8, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 9, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 10, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 11, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 12, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 13, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 14, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
+  { id: 15, icon : mortarboard, heading: "Education", text: "Build your career, tension-free" },
 ];
 
 //Left Arrow
@@ -86,12 +92,19 @@ function Carousel() {
           <h6 className="fw-bold">
             What financial goal do you want to plan today?
           </h6>
+
           <p><small>Select a goal to start planning</small></p>
+
+          <div className="d-flex justify-content-center me-5">
+            <img src={wealth} style={{ width: '70px', height: '70px' }}/>
+          </div>
+          
         </div>
 
         {plans.map((ele, i) => {
           return (
             <div className="ps-4 pe-5" key={i} >
+              <img src={ele.icon} style={{width : '50px', height: '50px'}}/>
               <h6 className="fw-bold">{ele.heading}</h6>
               <p className="text-muted">{ele.text}</p>
             </div>
