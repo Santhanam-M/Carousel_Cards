@@ -3,6 +3,7 @@ import siren from "../images/siren.png";
 import wedding from "../images/wedding-ring.png";
 import vacations from "../images/vacations.png";
 import mortarboard from "../images/mortarboard.png";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 function Cards() {
   const inputData = [
@@ -14,6 +15,11 @@ function Cards() {
       goalAmount: "15,00,00,000",
       goalDated: "March 2025",
       goalHealth: "Excellent",
+      goalColor : 'success',
+      goalProgress1: 40,
+      goalProgress2: 15,
+      goalProgress3: 22,
+      text : 'Goal ahead by 16 months'
     },
     {
       id: 2,
@@ -23,6 +29,11 @@ function Cards() {
       goalAmount: "15,00,00,000",
       goalDated: "March 2025",
       goalHealth: "Good",
+      goalColor : 'success',
+      goalProgress1: 40,
+      goalProgress2: 15,
+      goalProgress3: 25,
+      text : 'On track'
     },
 
     {
@@ -32,7 +43,12 @@ function Cards() {
       goalProgress: "11,24,00,000",
       goalAmount: "15,00,00,000",
       goalDated: "March 2025",
-      goalHealth: "Good",
+      goalHealth: "Weak",
+      goalColor : 'warning',
+      goalProgress1: 20,
+      goalProgress2: 5,
+      goalProgress3: 30,
+      text : 'Goal behind by 2 months'
     },
 
     {
@@ -43,6 +59,11 @@ function Cards() {
       goalAmount: "15,00,00,000",
       goalDated: "March 2025",
       goalHealth: "Poor",
+      goalColor : 'danger',
+      goalProgress1: 15,
+      goalProgress2: 20,
+      goalProgress3: 30,
+      text : 'Goal behind by 18 months'
     },
 
     {
@@ -52,7 +73,12 @@ function Cards() {
       goalProgress: "11,24,00,000",
       goalAmount: "15,00,00,000",
       goalDated: "March 2025",
-      goalHealth: "Weak",
+      goalHealth: "Reached",
+      goalColor : 'primary',
+      goalProgress1: 60,
+      goalProgress2: 5,
+      goalProgress3: 20,
+      text : 'Goal reached 3 months ahead'
     },
   ];
 
@@ -112,10 +138,19 @@ function Cards() {
                     <h6 className="fw-bolder" style={{ color: "gray" }}>
                       Goals Health
                     </h6>
-                    <p className="fw-bold">{ele.goalHealth}</p>
+                    <p className={`fw-bolder text-${ele.goalColor}`}>{ele.goalHealth}</p>
                   </div>
                 </div>
                 <hr />
+
+               {/* ProgressBar */}
+               <ProgressBar>
+                <ProgressBar  variant={ele.goalColor} now={ele.goalProgress1} key={1} />
+                <ProgressBar striped variant={ele.goalColor} now={ele.goalProgress2} key={2} />
+                <ProgressBar striped variant={ele.goalColor} now={ele.goalProgress3} key={3} />
+               </ProgressBar>
+
+               <p className={`text-${ele.goalColor}`}>{ele.text}</p>
               </div>
             </div>
           );
