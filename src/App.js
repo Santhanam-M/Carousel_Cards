@@ -1,5 +1,5 @@
 import SideBar from "./components/SideBar";
-import MainPage from "./components/MainPage";
+import Carousel from "./components/Carousel";
 import Cards from "./components/Cards";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import './styles/styles.css'
@@ -13,7 +13,7 @@ function App() {
         </div>
 
         <div className="col-xl-10 col-md-10">
-          <MainPage />
+          <Carousel />
           <Cards/>
         </div>
       </div>
