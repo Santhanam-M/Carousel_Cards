@@ -101,12 +101,12 @@ function Cards() {
       </div>
       <hr />
 
-      <div className="row container-fluid ">
+      <div className="row container ">
         {inputData.map((ele) => {
           return (
 
             <div
-              className="col-lg-4 col-xl-4 col-sm-6 col-md-4 mb-3"
+              className="col-lg-6 col-xl-4 col-sm-12 col-md-12 mb-3"
               key={ele.id}
               onClick={handleCardClick}
               style={{ cursor: "pointer" }}

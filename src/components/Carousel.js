@@ -121,14 +121,14 @@ function Carousel() {
           <p><small>Select a goal to start planning</small></p>
 
           <div className="d-flex justify-content-center me-5">
-            <img src={wealth} style={{ width: '70px', height: '70px' }}/>
+            <img src={wealth} style={{ width: '70px', height: '70px' }} alt="wedding"/>
           </div>
           
         </div>
 
         {plans.map((ele, i) => {
           return (
-            <div className="ps-4 pe-4" key={i} >
+            <div className="ps-4" key={i} >
                 <a href="https://www.linkedin.com/in/santhanam1994" key={i} target="_blank">
                   <img src={ele.icon} style={{width : '50px', height: '50px'}}/>
                 </a>

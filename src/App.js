@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="container-fluid mt-5 ">
       <div className="row">
-        <div className="col-xl-2 col-md-2">
+        <div className="col-xl-2 col-md-4">
           <SideBar />
         </div>
 
-        <div className="col-xl-10 col-md-10">
+        <div className="col-xl-10 col-md-8">
           <Carousel />
           <Cards/>
         </div>
