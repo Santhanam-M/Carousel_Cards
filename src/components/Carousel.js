@@ -76,6 +76,7 @@ function SamplePrevArrow(props) {
 
 //Components
 function Carousel() {
+
   const settings = {
     infinite: false,
     speed: 700,
@@ -85,9 +86,33 @@ function Carousel() {
     prevArrow: <SamplePrevArrow />,
   };
 
+  const responsiveSettings = [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+  ];
+
   return (
     <div className="container card custom-carousel p-4">
-      <Slider {...settings}>
+      <Slider {...settings} responsive={responsiveSettings}>
         <div className="ps-4">
           <h6 className="fw-bold">
             What financial goal do you want to plan today?
@@ -103,8 +128,10 @@ function Carousel() {
 
         {plans.map((ele, i) => {
           return (
-            <div className="ps-4 pe-5" key={i} >
-              <img src={ele.icon} style={{width : '50px', height: '50px'}}/>
+            <div className="ps-4 pe-4" key={i} >
+                <a href="https://www.linkedin.com/in/santhanam1994" key={i} target="_blank">
+                  <img src={ele.icon} style={{width : '50px', height: '50px'}}/>
+                </a>
               <h6 className="fw-bold">{ele.heading}</h6>
               <p className="text-muted">{ele.text}</p>
             </div>

@@ -6,6 +6,11 @@ import mortarboard from "../images/mortarboard.png";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 function Cards() {
+
+  const handleCardClick = () =>{
+    window.open('https://www.linkedin.com/in/santhanam1994', "_blank")
+  }
+
   const inputData = [
     {
       id: 1,
@@ -84,17 +89,29 @@ function Cards() {
 
   return (
     <div className="container card custom-carousel p-3 mt-4">
-      <h5 className="fw-bold m-2">Track Goals</h5>
+
+      <div className="row justify-content-between">
+      <div className="col-lg-8 col-md-8">
+        <h5 className="fw-bold m-2">Track Goals</h5>
+      </div>
+
+      <div className="col-lg-3 col-md-3">
+        <input type="search" className="form-control" placeholder="Search"/>
+      </div>
+      </div>
       <hr />
 
       <div className="row container-fluid ">
         {inputData.map((ele) => {
           return (
+
             <div
               className="col-lg-4 col-xl-4 col-sm-6 col-md-4 mb-3"
               key={ele.id}
+              onClick={handleCardClick}
+              style={{ cursor: "pointer" }}
             >
-              <div className="card p-3 rounded-4">
+              <div className="card p-3 rounded-4 card-customize">
                 <div className="row align-items-center">
                   <div className="col-lg-3 col-xl-3">
                     <img

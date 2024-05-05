@@ -6,7 +6,6 @@ body{
     border-radius: 35px;
 }
 
-.card-content{
-    margin-right: 10px;
-    margin-bottom: 20px;  
+.card-customize:hover{
+    box-shadow: 0px 4px rgba(36, 47, 78, 0.12);
 }
